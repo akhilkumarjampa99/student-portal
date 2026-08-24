@@ -389,3 +389,21 @@ function updateAttendanceUI(data) {
     observeRevealElements();
   }
 }
+function showSection(sectionName, element) {
+  const container = document.getElementById('slides-container');
+  const sections = container.querySelectorAll('.slide-panel');
+  
+  sections.forEach(section => {
+    section.classList.remove('active');
+  });
+  
+  const targetSection = document.getElementById(`section-${sectionName}`);
+  if (targetSection) {
+    targetSection.classList.add('active');
+  }
+  
+  // Update nav links
+  const navLinks = document.querySelectorAll('.nav-link');
+  navLinks.forEach(link => link.classList.remove('active'));
+  if (element) element.classList.add('active');
+}
