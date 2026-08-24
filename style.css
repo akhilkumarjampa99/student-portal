@@ -1137,3 +1137,26 @@ table { border-collapse: collapse; }
 .stat-card[onclick] {
   cursor: pointer;
 }
+.slides-container {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.slide-panel {
+  width: 100%;
+  flex-shrink: 0;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(0);
+}
+
+.slide-panel.hidden {
+  transform: translateX(100%);
+  display: none;
+}
+
+.slide-panel.active {
+  transform: translateX(0);
+  display: block;
+}
